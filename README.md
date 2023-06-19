@@ -9,8 +9,8 @@
     const hideClassTab = 'hide-tab';
 
     //константы классов для контента
-    const showClassContent = 'show';
-    const hideClassContent = 'hide';
+    const showClassContent = 'show-content';
+    const hideClassContent = 'hide-content';
 
 
 ### установка:
