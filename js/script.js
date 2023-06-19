@@ -12,8 +12,8 @@ window.addEventListener('DOMContentLoaded', function () {
     const hideClassTab = 'hide-tab';
 
     //константы классов для контента
-    const showClassContent = 'show';
-    const hideClassContent = 'hide';
+    const showClassContent = 'show-content';
+    const hideClassContent = 'hide-content';
 
 
     //функция удаляет класс show ставит всем пунктам класс скрытия hide
