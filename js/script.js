@@ -8,8 +8,8 @@ window.addEventListener('DOMContentLoaded', function () {
     let contents = document.querySelectorAll('.content__item');
 
     //классы элементам меню (НЕОБЯЗАТЕЛЬНЫЕ нужны для изменения нажатой кнопки)
-    const showClassTab = 'show-b-border';
-    const hideClassTab = 'hide-b-border';
+    const showClassTab = 'show-tab';
+    const hideClassTab = 'hide-tab';
 
     //константы классов для контента
     const showClassContent = 'show';
