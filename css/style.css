@@ -31,10 +31,10 @@ body {
   color: var(--font-c);
 }
 
-.show-b-border {
+.show-tab {
   border-bottom: 2px solid var(--background-c);
 }
-.hide-b-border {
+.hide-tab {
   border-bottom: 2px solid var(--border-c);
 }
 
@@ -52,9 +52,9 @@ body {
   color: var(--font-c);
 }
 
-.hide {
+.hide-content {
   display: none;
 }
-.show {
+.show-content {
   display: block;
 }
