@@ -1,0 +1,68 @@
+$circle-color: #0a4a3b; //цвет круга
+$size : 50px; //размер окружности
+
+$size75: $size*0.7;
+$size50: $size*0.5;
+$size30: $size*0.3;
+$size25: $size*0.25;
+$size10: $size*0.1;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 700px;
+    min-height: 300px;
+    margin: 0 auto;
+}
+
+/* анимация круга */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* рисуем круг */
+.circle {
+    position: relative;
+    width: $size;
+    height: $size;
+    background-color: $circle-color;
+    border-radius: $size50;
+    /* задаем скорость цифрой, оборот за 3s секунд */
+    animation: rotate 3s infinite linear;
+
+    /* внутренний круг */
+    &__center {
+        width: $size75;
+        height: $size75;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        /* разрыв внутреннего круга */
+        &:before {
+            content: '';
+            display: block;
+            width: $size30;
+            height: $size10;
+            background-color: #fff;
+
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -$size25;
+        }
+    }
+}
