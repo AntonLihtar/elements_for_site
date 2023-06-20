@@ -1,0 +1,50 @@
+@media (max-width:991px) {
+    .header-menu {
+        width: 75%;
+    }
+}
+
+@media (max-width:767px) {
+    .header-menu {
+        width: 80%;
+    }
+}
+
+@media (max-width:575px) {
+    .header {
+        &-burger {
+            display: flex;
+
+            &:hover {
+                span,
+                &:after,
+                &:before {
+                    background-color: $font-menu-hover;
+                }
+            }
+        }
+
+        &-menu {
+            position: absolute;
+            left: -150px;
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            &__item {
+                padding: 3% 5%;
+                width: 100%;
+                height: 30px;
+                background-color: $bgc-menu;
+            }
+
+            &.active {
+                left: 0;
+                transition: all 0.5s;
+            }
+        }
+
+    }
+}
