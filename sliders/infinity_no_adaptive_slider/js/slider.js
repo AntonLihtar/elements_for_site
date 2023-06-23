@@ -47,20 +47,20 @@ function addSlideRight(sliderName = "slider-next") {
 //----------добавляет слайд слева для перелистывания назад----------
 function addSlideLeft() {
 
-    if (slides.length == 1) { //если у нас всего 1 слайд
+    if (slider.length == 1) { //если у нас всего 1 слайд
         iterator = 0;
 
-    } else if (slides.length == 2) { //слайдов 2
+    } else if (slider.length == 2) { //слайдов 2
         iterator = (step == 0) ? 1 : 0;
 
     } else { //слайдов 3 или больше
 
         if (step == 2) {
-            iterator = slides.length - 1;
+            iterator = slider.length - 1;
         } else if (step == 1) {
-            iterator = slides.length - 2;
+            iterator = slider.length - 2;
         } else if (step == 0) {
-            iterator = slides.length - 3;
+            iterator = slider.length - 3;
         } else {
             iterator = step - 3;
         }
@@ -118,7 +118,7 @@ function left() {
     
     step--;
     if (step < 0) {
-        step = slides.length - 1;
+        step = slider.length - 1;
     }
 
     setTimeout(() => {
