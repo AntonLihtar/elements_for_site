@@ -5,7 +5,13 @@
 
 #### В CSS файле хранится style.css для быстрой просмотра стилей без sass и отключения owerflow (чтобы посмотреть работу слайдера)
 
+## Для просмотра:
+скачать архив infinity_no_adaptive_slider
+и распаковать// запустить index
+
 ## Для подключения:
+скачать архив infinity_no_adaptive_slider
+и распаковать// 
 1.  скопировать блок slider из index
 2.  установить box-sizing: border-box;  скопировать CSS блоки для классов .slider-frame //
 .slider-center,
