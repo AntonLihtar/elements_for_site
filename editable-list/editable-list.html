@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Editable-list</title>
+
+</head>
+
+<body>
+
+    <div class="spisok"></div>
+    <input type="text" id="form">
+    <button type="button" id="add">ADD</button>
+    <button type="button" id="remove">REMOVE</button>
+
+
+    <script>
+        const array = ['Первый', 'Второй', 'Третий', 'Четвыртый', 'Пятый'];
+        const getList = document.querySelector('.spisok');
+        const ol = getList.appendChild(document.createElement('ol'));
+
+
+        //добавляем li c контентом в ol
+        function addLiForOl(content) {
+            ol.innerHTML += `<li>${content}</li>`;
+        }
+
+        //ф читает список и формирует элементы
+        function getArr(array) {
+            array.forEach((element) => {
+                addLiForOl(element);
+            });
+        }
+        getArr(array);
+
+
+        const form = document.getElementById('form');
+        const add = document.getElementById('add');
+        const remove = document.getElementById('remove');
+
+        //----------кнопка add добавляет контент из формы----------
+        add.onclick = () => {
+            if (form.value !== null && form.value != "") {
+                addLiForOl(form.value);
+                remove.disabled = false; // включаем кнопку remove
+            }
+        }
+
+        let listLi = document.querySelectorAll('.spisok ol li');
+        //----------кнопка удаляет последнюю строку----------
+        remove.onclick = () => {
+            ol.removeChild(listLi[listLi.length - 1]);
+            if (listLi.length < 1) {
+                remove.disabled = true; // выключаем кнопку remove
+            }
+        }
+
+        /* -----------------------------------------------------------------
+        при клике на элемент => преобразуум в инпут и можем вводить текст =>
+        при клике в другое место сохраняем контент в li Элементе */
+        ol.addEventListener('click', function (event) {
+            //если мы кликнули на пункт li
+            if (event.target && event.target.tagName == 'LI') {
+
+                //получаем контент из li и удаляем
+                let content = event.target.textContent;
+                event.target.textContent = '';
+
+                //создаем форму и добавляем ей контент
+                let temporaryForm = document.createElement('input');
+                temporaryForm.value = content;
+
+                //добавляем форму и вешаем на нее фокус 
+                event.target.append(temporaryForm);
+                temporaryForm.focus();
+
+                //получаем контент с формы и используем в качестве контента для li
+
+                temporaryForm.addEventListener('blur', function () {
+                    let inputText = temporaryForm.value;
+                    //форма заменяется контентом
+                    event.target.textContent = inputText;
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>
