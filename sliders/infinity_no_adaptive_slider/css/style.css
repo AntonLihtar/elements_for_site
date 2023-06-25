@@ -16,6 +16,7 @@
   text-align: center;
 }
 
+/* для работы слайдера */
 .slider-frame {
   position: relative;
   width: 400px;
