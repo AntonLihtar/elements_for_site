@@ -1,0 +1,65 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+table {
+    margin-left: 10px;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: goldenrod;
+    width: 50px;
+    height: 50px;
+    border: 1px solid;
+    text-align: center;
+    padding: 3px;
+}
+
+td {
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+}
+
+.calendar {
+    width: 500px;
+    min-height: 300px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    width: 350px;
+    height: 40px;
+    margin: 100px auto 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.monthYear {
+    margin: 0px auto;
+    width: 500px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 85px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(156, 51, 51);
+    color: white;
+}
